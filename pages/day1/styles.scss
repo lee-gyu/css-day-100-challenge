@@ -1,0 +1,112 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+// use only the available space inside the 400x400 frame
+.frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: linear-gradient(to top right, #43389F 0%, #4ec6ca 100%);
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  width: 200px;
+  color: white;
+  font-family: "Courier New";
+  font-weight: 700;
+
+  h2 {
+    margin-top: 6px;
+    margin-bottom: 0px;
+    font-size: 82px;
+    line-height: 60px;
+  }
+  
+  span {
+    display: block;
+    font-size: 23px;
+    letter-spacing: 0.04em;
+    line-height: 20px;
+  }
+}
+
+.number {
+  position: relative;
+  height: 100px;
+}
+
+.word {
+  position: relative;
+  box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+  
+  &--first {
+    z-index: 3;
+    left: 0px;
+  }
+
+  &--second {
+    z-index: 2;
+    left: 17px;
+  }
+
+  &--third {
+    z-index: 1;
+    left: 100px;
+  }
+
+  &.one {
+    &::before {
+      position: absolute;
+      left: -16px;
+      width: 20px;
+      height: 40px;
+      transform: rotate(50deg);
+      background: #fff;
+      border-radius: 3px;
+      box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+
+      content: "";
+    }
+
+    &::after {
+      position: absolute;
+      width: 24px;
+      height: 100px;
+      background: #fff;
+      border-radius: 3px;
+      box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+
+      content: "";
+    }
+  }
+
+  &.zero {
+    position: absolute;
+    box-sizing: border-box;
+    border: 24px solid #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "css-day-100-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.67.0",
+    "vite": "^4.4.9"
+  }
+}
