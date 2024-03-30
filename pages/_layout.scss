@@ -1,3 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
 :root {
   background-color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+@import "./utility";
+

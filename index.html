@@ -5,24 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Main</title>
   <link rel="stylesheet" href="./pages/_layout.scss">
-</head>
-<body>
   <style>
     :root {
       color: white;
-      font-family: sans-serif;
       font-size: 32px;
       font-weight: 500;
     }
 
+    a:visited {
+      color: #aeaeae;
+    }
+
+    a:not(:visited) {
+      color: #7f7fe0;
+    }
+
+    a:hover {
+      opacity: 0.7;
+    }
+
+    a:not([href]){
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .ul-grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      margin: 0;
+      padding: 16px 1.25em;
+    }
+
     li {
-      margin: 0.5em 0;
+      line-height: 1.5rem;
+    }
+
+  </style>
+  <style media="(max-width: 720px)">
+    /* responsible layout for mobile */
+    :root {
+      font-size: 24px;
     }
   </style>
+</head>
+<body>
   <nav>
-    <ul>
+    <ul class="ul-grid">
       <li><a href="/css-day-100-challenge/pages/day1/">Day1</a></li>
       <li><a href="/css-day-100-challenge/pages/day2/">Day2</a></li>
+      <li><a>Day3</a></li>
+      <li><a>Day4</a></li>
+      <li><a>Day5</a></li>
+      <li><a href="/css-day-100-challenge/pages/day6/">Day6</a></li>
     </ul>
   </nav>
 </body>
