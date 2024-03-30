@@ -1,5 +1,6 @@
 # 100 days CSS challenge
 
-- My work url: <https://lee-gyu.github.io/css-day-100-challenge/>
+This is a repository for the 100 days [CSS challenge](https://100dayscss.com/).\
+I will be updating this repository with the challenges I complete.
 
-- references for the challenges: <https://100dayscss.com/>
+- My work demo: <https://lee-gyu.github.io/css-day-100-challenge/>
