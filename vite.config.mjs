@@ -10,6 +10,9 @@ const htmlEntries = Object.assign( { index: "./index.html" }, pageFiltered);
 export default defineConfig({
   build: {
     outDir: ".dist",
+    target: [
+      "chrome87"
+    ],
     rollupOptions: {
       input: {
         ...htmlEntries
