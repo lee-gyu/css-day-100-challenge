@@ -4,12 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Main</title>
+  <link rel="stylesheet" href="./pages/_layout.scss">
 </head>
 <body>
-  <input id="num" type="number" value="2"/>
-  <button id="btn_move">Move</button>
-  <script>
-    btn_move.onclick = () => location.href = `/pages/day${num.value}/` ;
-  </script>
+  <style>
+    :root {
+      color: white;
+      font-family: sans-serif;
+      font-size: 32px;
+      font-weight: 500;
+    }
+
+    li {
+      margin: 0.5em 0;
+    }
+  </style>
+  <nav>
+    <ul>
+      <li><a href="/css-day-100-challenge/pages/day1/">Day1</a></li>
+      <li><a href="/css-day-100-challenge/pages/day2/">Day2</a></li>
+    </ul>
+  </nav>
 </body>
 </html>

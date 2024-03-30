@@ -8,6 +8,7 @@ const pageFiltered = Array.from({ length: 100 }, (_, id) => `./pages/day${id}/in
 const htmlEntries = Object.assign( { index: "./index.html" }, pageFiltered);
 
 export default defineConfig({
+  base: "css-day-100-challenge/",
   build: {
     outDir: ".dist",
     target: [
