@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "ESNext",
+    "module": "ES2015",
+    "moduleResolution": "Bundler"
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

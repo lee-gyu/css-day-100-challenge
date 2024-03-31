@@ -1,0 +1,59 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+
+const { BASE_URL } = import.meta.env;
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav></nav>
+    <div class="frame">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style lang="scss">
+  @import "./_layout.scss";
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+  :root {
+    background-color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    transform: translate3d(-50%, -50%, 0);
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+</style>

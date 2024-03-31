@@ -1,0 +1,59 @@
+---
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="ul-grid">
+        <li><a href="/css-day-100-challenge/day1/">Day1</a></li>
+        <li><a href="/css-day-100-challenge/day2/">Day2</a></li>
+        <li><a href="/css-day-100-challenge/day6/">Day6</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
+
+<style lang="scss">
+  @import "../layouts/_layout.scss";
+
+  :root {
+    color: white;
+    font-size: 32px;
+    font-weight: 500;
+  }
+
+  a:visited {
+    color: #aeaeae;
+  }
+
+  a:not(:visited) {
+    color: #7f7fe0;
+  }
+
+  a:hover {
+    opacity: 0.7;
+  }
+
+  a:not([href]) {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .ul-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin: 0;
+    padding: 16px 1.25em;
+  }
+
+  li {
+    line-height: 1.5rem;
+  }
+</style>

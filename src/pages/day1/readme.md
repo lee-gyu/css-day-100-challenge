@@ -8,8 +8,6 @@
 
 그라데이션 적용
 
-
-
 ## links
 
 - <https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient>
