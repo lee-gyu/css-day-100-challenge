@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradient Test</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box gradient-1"></div>
+    <div class="box gradient-2"></div>
+    <div class="box gradient-3"></div>
+    <div class="box gradient-4"></div>
+    <div class="box gradient-5"></div>
+    <div class="box gradient-6"></div>
+    <div class="box gradient-7"></div>
+    <div class="box gradient-8"></div>
+    <div class="box gradient-9"></div>
+  </div>
+</body>
+
+</html>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-auto-rows: 300px;
+    gap: 12px;
+  }
+
+  .box {
+    border: 1px solid black;
+  }
+
+  .gradient-1 {
+    background: linear-gradient(90deg, #ff0000 0%, #ffff00 100%);
+  }
+
+  .gradient-2 {
+    background: linear-gradient(to left, #ff0000 0%, #ffff00 100%);
+  }
+
+  .gradient-3 {
+    background: linear-gradient(to top right, #ff0000 0%, #ffff00 100%);
+  }
+
+  .gradient-4 {
+    background: linear-gradient(to bottom, #ff0000 0%, #ffff00 100%);
+  }
+
+  .gradient-5 {
+    background: linear-gradient(45deg, #ff0000 0%, #ffff00 100%);
+  }
+
+  .gradient-6 {
+    background: linear-gradient(0.25turn, #ff0000 0%, #ffff00 100%);
+  }
+</style>
