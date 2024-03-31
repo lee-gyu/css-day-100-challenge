@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  outDir: "./dist",
+  outDir: "./.dist",
   base: "/css-day-100-challenge/",
 });
