@@ -49,9 +49,21 @@
 }
 
 .profile-area {
+  position: relative;
+  cursor: pointer;
   margin-top: 38px;
   height: 70px;
   width: 70px;
+
+  &:hover {
+    .circle--left {
+      transform: rotate(360deg);
+    }
+
+    .circle--right {
+      transform: rotate(-360deg);
+    }
+  }
 }
 
 .profile-img {
@@ -59,7 +71,35 @@
   width: 100%;
   border-radius: 100%;
 
-  cursor: pointer;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 9999px;
+  border: solid 1px;
+  transition: all 1.5s ease-in-out;
+
+  &--right {
+    border-color: #786450 transparent #786450 #786450;
+  }
+
+  &--left {
+    border-color: #786450 #786450 #786450 transparent;
+  }
+
+  &--lg {
+    top: -6px;
+    left: -6px;
+    width: 82px;
+    height: 82px;
+  }
+
+  &--sm {
+    top: -3px;
+    left: -3px;
+    width: 76px;
+    height: 76px;
+  }
 }
 
 .button {
