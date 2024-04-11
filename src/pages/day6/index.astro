@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+
+import Layout from 'src/layouts/_layout.astro';
+import imgSrc from "./jessica-potter.jpg";
+
+const rightContents = [
+  { count: 523, label: "Posts" },
+  { count: 1387, label: "Likes" },
+  { count: 146, label: "Follower" }
+]
+
+const profile = {
+  name: "Jessica Potter",
+  job: "Visual Artist"
+}
+
+---
+
+<Layout title="Day 6">
+  <div class="center">
+    <div class="center-left">
+      <div class="profile-area">
+        <Image class="profile-img" src={imgSrc} alt="profile-image"/>
+      </div>
+      <div class="profile-info">
+        <div class="name">{profile.name}</div>
+        <div class="job">{profile.job}</div>
+      </div>
+      <div class="profile-actions">
+        <button class="button">Follow</button>
+        <button class="button">Message</button>
+      </div>
+    </div>
+    <div class="center-right">
+      {rightContents.map( ({ count, label }) => (
+        <div class="content-item">
+          <div class="content-item__header">{count}</div>
+          <div class="content-item__body">{label}</div>
+        </div>
+      ) )}
+    </div>
+  </div>
+</Layout>
+
+<style lang="scss" is:global>
+  @import "./_styles.scss";
+</style>
