@@ -1,0 +1,51 @@
+---
+import leftIconSvg from 'css.gg/icons/svg/chevron-left.svg?raw';
+import rightIconSvg from 'css.gg/icons/svg/chevron-right.svg?raw';
+import homeIconSvg from 'css.gg/icons/svg/home.svg?raw';
+
+const { BASE_URL } = import.meta.env;
+---
+
+<div class="floating-actions">
+  <a class="return-to-home" href={BASE_URL}><Fragment set:html={leftIconSvg} /></a>
+  <a class="return-to-home" href={BASE_URL}><Fragment set:html={homeIconSvg} /></a>
+  <a class="return-to-home" href={BASE_URL}><Fragment set:html={rightIconSvg} /></a>
+</div>
+
+<style lang="scss">
+  .floating-actions {
+    z-index: 1000;
+    position: fixed;
+    display: grid;
+    column-gap: 1px;
+    grid-template-columns: 32px 1fr 32px;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 32px;
+    transform: translate3d(-200px, -234px, 0);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .return-to-home {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.15s ease-in-out;
+    color: black;
+
+    background-color: hsl(0, 0%, 100%);
+
+    &:hover {
+      color: white;
+      background-color: hsl(0 0% 100% / 0.6);
+    }
+
+    &:active {
+      background-color: hsl(0 0% 100% / 0.8);
+    }
+  }
+</style>

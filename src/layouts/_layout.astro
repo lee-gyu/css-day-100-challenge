@@ -1,11 +1,11 @@
 ---
+import FloatingActions from "./_floating-actions.astro"
+
 interface Props {
   title?: string;
 }
 
 const { title } = Astro.props;
-
-const { BASE_URL } = import.meta.env;
 
 ---
 
@@ -17,10 +17,10 @@ const { BASE_URL } = import.meta.env;
     <title>{title}</title>
   </head>
   <body>
-    <nav></nav>
     <div class="frame">
       <slot />
     </div>
+    <FloatingActions/>
   </body>
 </html>
 
@@ -56,4 +56,5 @@ const { BASE_URL } = import.meta.env;
     box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
     overflow: hidden;
   }
+
 </style>
