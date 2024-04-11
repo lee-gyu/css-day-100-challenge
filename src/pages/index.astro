@@ -1,5 +1,11 @@
 ---
 
+const implemented = [
+  'day1',
+  'day2',
+  'day6',
+];
+
 ---
 
 <!doctype html>
@@ -12,9 +18,9 @@
   <body>
     <nav>
       <ul class="ul-grid">
-        <li><a href="/css-day-100-challenge/day1/">Day1</a></li>
-        <li><a href="/css-day-100-challenge/day2/">Day2</a></li>
-        <li><a href="/css-day-100-challenge/day6/">Day6</a></li>
+        {implemented.map((day) => {
+          return <li><a href={`/css-day-100-challenge/${day}/`}>{day}</a></li>;
+        })}
       </ul>
     </nav>
   </body>
