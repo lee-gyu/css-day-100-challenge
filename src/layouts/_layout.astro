@@ -21,6 +21,7 @@ const { title, page } = Astro.props;
     <ViewTransitions/>
   </head>
   <body>
+    <div class="header">{title}</div>
     <div class="frame">
       <slot />
     </div>
@@ -37,6 +38,7 @@ const { title, page } = Astro.props;
     font-family: 'Open Sans', Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    --frame-size: 400px;
   }
 
   html,
@@ -54,11 +56,26 @@ const { title, page } = Astro.props;
     transform: translate3d(-50%, -50%, 0);
     top: 50%;
     left: 50%;
-    width: 400px;
-    height: 400px;
+    width: var(--frame-size);
+    height: var(--frame-size);
     border-radius: 2px;
     box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
     overflow: hidden;
+  }
+
+  .header {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    text-align: center;
+    width: var(--frame-size);
+    left: 50%;
+    top: 50%;
+    color: whitesmoke;
+    font-size: 24px;
+    font-weight: 700;
+
+    transform: translate3d(-50%, -280px, 0);
   }
 
 </style>
