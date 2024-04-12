@@ -1,0 +1,125 @@
+:root {
+  --pyramid-light: #F4F4F4;
+  --pyramid-shadow: #DDDADA;
+  --pyramid-dark: #272C34;
+  --ground-sand: #F0DE75;
+  --sky: #7DDFFC;
+  --sun: #FFEF00;
+}
+
+.frame {
+  background: #272C34;
+}
+
+.center {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  background-color: var(--sky);
+  clip-path: circle(90px at 90px 90px);
+  overflow: hidden;
+  z-index: 0;
+
+  animation: fade-in-out 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+.ground {
+  position: absolute;
+  top: 124px;
+  height: 56px;
+  width: 100%;
+  z-index: 3000;
+  background-color: var(--ground-sand);
+}
+
+.sun {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  top: 7px;
+  left: 73px;
+  border-radius: 9999px;
+  background-color: var(--sun);
+  
+  transform-origin: 50% 400%;
+  // transform: rotate(16deg);
+  z-index: 1000;
+  animation: sun-rotate 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+.pyramid {
+  position: absolute;
+  background-color: #F4F4F4;
+}
+
+.pyramid-left {
+  top: 67px;
+  left: 35px;
+  height: 57px;
+  width: 116px;
+
+  clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+
+  animation: pyramid-left 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+.pyramid-right {
+  top: 67px;
+  left: 35px;
+  height: 57px;
+  width: 116px;
+
+  background-color: #DDDADA;
+
+  clip-path: polygon(50% 0%, 100% 100%, 60% 100%);
+
+  animation: pyramid-right 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+@keyframes sun-rotate {
+  0% {
+    background-color: #F57209;
+    transform: rotate(-70deg);
+  }
+  30% {
+    background-color: #FFEF00;
+    transform: rotate(-28deg)
+  }
+  70% {
+    background-color: #FFEF00;
+  }
+  100% {
+    background-color: #F57209;
+    transform: rotate(70deg);
+  }
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pyramid-left {
+  0% {
+    background-color: var(--pyramid-dark);
+  }
+  30% {
+    background-color: var(--pyramid-light);
+  }
+  70% {
+    background-color: var(--pyramid-shadow);
+  }
+  100% {
+    background-color: var(--pyramid-dark);
+  }
+}

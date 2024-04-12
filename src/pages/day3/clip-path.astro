@@ -1,0 +1,41 @@
+---
+import Layout from "src/layouts/_layout.astro";
+
+---
+
+<Layout title="clip-path test">
+  <div class="polygon polygon-1"></div>
+  <div class="circle"></div>
+</Layout>
+
+
+<style lang="scss">
+  :global(.frame) {
+    background-color: lightpink;
+  }
+
+  .polygon {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: skyblue;
+  }
+
+  .polygon-1 {
+    top: 20px;
+    left: 20px;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  }
+
+  .circle {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    outline: 1px solid red;
+    clip-path: circle(50% at 50% 50%);
+  }
+
+</style>

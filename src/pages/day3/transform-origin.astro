@@ -1,0 +1,119 @@
+---
+import Layout from "src/layouts/_layout.astro";
+
+---
+
+<Layout title="transform-origin test">
+  <div class="border">
+    <div class="box"></div>
+    <div class="box box--90"></div>
+    <div class="box box--160"></div>
+    <div class="box box--225"></div>
+    <div class="box box--ani"></div>
+    <div class="point-box"></div>
+    <div class="point-origin"></div>
+  </div>
+</Layout>
+
+
+<style lang="scss">
+  :global(.frame) {
+    background-color: lightpink;
+  }
+
+  :root {
+    --start-x: 60px;
+    --start-y: 60px;
+    --border-size: 200px;
+    --box-size: 40px;
+
+    --circle-x: 50%;
+    --circle-y: -20px;
+    
+    --origin-x: 0px;
+    --origin-y: 120px;
+  }
+
+  .point-origin {
+    position: absolute;
+    top: calc(var(--circle-y) + var(--origin-y));
+    left: calc(var(--circle-x) + var(--origin-x));
+    width: 4px;
+    height: 4px;
+    background-color: green;
+  }
+
+  .point-box {
+    position: absolute;
+    top: var(--circle-y);
+    left: var(--circle-x);
+    width: 4px;
+    height: 4px;
+    background-color: black;
+  }
+
+  .border {
+    position: absolute;
+    top: var(--start-y);
+    left: var(--start-x);
+    width: var(--border-size);
+    height: var(--border-size);
+    border: 1px solid black;
+    border-radius: 9999px;
+  }
+
+  .box {
+    position: absolute;
+    border-radius: 10px;
+    background-color: royalblue;
+
+    top: var(--circle-y);
+    left: var(--circle-x);
+    width: var(--box-size);
+    height: var(--box-size);
+
+    /**
+     * what is transform-origin?
+     * sets the origin for an element's transformations
+     * the element will rotate around the origin point
+     * 박스의 위치부터과 origin 위치까지가 반지름이 되어 회전한다.
+     */
+    transform-origin: var(--origin-x) var(--origin-y);
+    // box 기준으로 bottom right로 세팅
+    // transform-origin: bottom right;
+    // transform-origin: center;
+    
+  }
+
+  .box--90 {
+    background-color: blueviolet;
+    transform: rotate(90deg);
+  }
+
+  .box--160 {
+    background-color: turquoise;
+    transform: rotate(160deg);
+  }
+
+  .box--225 {
+    background-color: tomato;
+    transform: rotate(225deg);
+  }
+
+  .box--ani {
+    background-color: tomato;
+    animation: rotate 2s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+</style>
+
+
