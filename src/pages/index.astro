@@ -1,6 +1,8 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import { pages } from "./routing";
+import { pageInfo } from "./routing";
+
+const navList = Object.entries(pageInfo);
 
 ---
 
@@ -14,11 +16,11 @@ import { pages } from "./routing";
   </head>
   <body>
     <nav>
-      <ul class="ul-grid">
-        {pages.map((day) => {
-          return <li><a href={`/css-day-100-challenge/${day}/`}>{day}</a></li>;
+      <ol class="ul-grid">
+        {navList.map(([key, { title }]) => {
+          return <li><a href={`/css-day-100-challenge/${key}/`}>{title}</a></li>;
         })}
-      </ul>
+      </ol>
     </nav>
   </body>
 </html>

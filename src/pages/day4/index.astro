@@ -1,0 +1,43 @@
+---
+import Layout from 'src/layouts/_layout.astro';
+---
+
+<Layout title="Day 4" page="day4">
+  <div class="dot dot-1"></div>
+  <div class="dot dot-2"></div>
+  <div class="dot dot-3"></div>
+</Layout>
+
+<style lang="scss" is:global>
+  
+  .frame {
+    background-color: #E56262;
+  }
+
+  .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    &-1 {
+      width: 90px;
+      height: 90px;
+    }
+
+    &-2 {
+      width: 60px;
+      height: 60px;
+    }
+
+    &-3 {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+</style>
+
