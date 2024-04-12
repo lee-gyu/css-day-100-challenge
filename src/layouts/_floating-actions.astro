@@ -8,12 +8,10 @@ import { getPrevPage, getNextPage } from "../pages/routing";
 const { BASE_URL } = import.meta.env;
 
 interface Props {
-  page?: string;
+  page: string;
 }
 
-const { 
-  page = "day1"
-} = Astro.props;
+const { page } = Astro.props;
 
 const prevPage = getPrevPage(page);
 const nextPage = getNextPage(page);
