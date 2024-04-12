@@ -1,12 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-
-const implemented = [
-  'day1',
-  'day2',
-  'day3',
-  'day6',
-];
+import { pages } from "./routing";
 
 ---
 
@@ -21,7 +15,7 @@ const implemented = [
   <body>
     <nav>
       <ul class="ul-grid">
-        {implemented.map((day) => {
+        {pages.map((day) => {
           return <li><a href={`/css-day-100-challenge/${day}/`}>{day}</a></li>;
         })}
       </ul>

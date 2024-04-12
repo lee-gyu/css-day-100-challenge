@@ -3,14 +3,30 @@ import leftIconSvg from 'css.gg/icons/svg/chevron-left.svg?raw';
 import rightIconSvg from 'css.gg/icons/svg/chevron-right.svg?raw';
 import homeIconSvg from 'css.gg/icons/svg/home.svg?raw';
 
+import { getPrevPage, getNextPage } from "../pages/routing";
+
 const { BASE_URL } = import.meta.env;
+
+interface Props {
+  page?: string;
+}
+
+const { 
+  page = "day1"
+} = Astro.props;
+
+const prevPage = getPrevPage(page);
+const nextPage = getNextPage(page);
+
+const prevUrl = `${BASE_URL}${prevPage}/`
+const nextUrl = `${BASE_URL}${nextPage}/`
 
 ---
 
 <div class="floating-actions">
-  <a class="return-to-home" href={BASE_URL}><Fragment set:html={leftIconSvg} /></a>
+  <a class="return-to-home" href={prevUrl}><Fragment set:html={leftIconSvg} /></a>
   <a class="return-to-home" href={BASE_URL}><Fragment set:html={homeIconSvg} /></a>
-  <a class="return-to-home" href={BASE_URL}><Fragment set:html={rightIconSvg} /></a>
+  <a class="return-to-home" href={nextUrl}><Fragment set:html={rightIconSvg} /></a>
 </div>
 
 <style lang="scss">

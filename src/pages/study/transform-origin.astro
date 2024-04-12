@@ -10,6 +10,7 @@ import Layout from "src/layouts/_layout.astro";
     <div class="box box--160"></div>
     <div class="box box--225"></div>
     <div class="box box--ani"></div>
+    <div class="test-box"></div>
     <div class="point-box"></div>
     <div class="point-origin"></div>
   </div>
@@ -32,6 +33,18 @@ import Layout from "src/layouts/_layout.astro";
     
     --origin-x: 0px;
     --origin-y: 120px;
+  }
+
+  .test-box {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 14px;
+    height: 14px;
+    background-color: red;
+    transform-origin: 93px 93px;
+
+    animation: rotate 8s linear infinite;
   }
 
   .point-origin {
