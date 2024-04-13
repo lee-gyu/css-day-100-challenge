@@ -15,13 +15,16 @@ const navList = Object.entries(pageInfo);
     <ViewTransitions/>
   </head>
   <body>
-    <nav>
-      <ol class="ul-grid">
-        {navList.map(([key, { title }]) => {
-          return <li><a href={`/css-day-100-challenge/css-challenges/${key}/`}>{title}</a></li>;
-        })}
-      </ol>
-    </nav>
+    <div class="grid grid-cols-2 px-3 py-2">
+      <nav>
+        <div>CSS Challenges</div>
+        <ol class="ul-grid list-decimal">
+          {navList.map(([key, { title }]) => {
+            return <li><a href={`/css-day-100-challenge/css-challenges/${key}/`}>{title}</a></li>;
+          })}
+        </ol>
+      </nav>
+    </div>
   </body>
 </html>
 
