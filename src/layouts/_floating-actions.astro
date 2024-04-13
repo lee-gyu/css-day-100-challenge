@@ -16,8 +16,10 @@ const { page } = Astro.props;
 const prevPage = getPrevPage(page);
 const nextPage = getNextPage(page);
 
-const prevUrl = `${BASE_URL}${prevPage}/`
-const nextUrl = `${BASE_URL}${nextPage}/`
+const cssDir = "css-challenges"
+
+const prevUrl = `${BASE_URL}${cssDir}/${prevPage}/`
+const nextUrl = `${BASE_URL}${cssDir}/${nextPage}/`
 
 ---
 
