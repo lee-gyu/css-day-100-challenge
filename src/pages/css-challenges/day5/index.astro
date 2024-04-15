@@ -1,10 +1,26 @@
 ---
 import Layout from 'src/layouts/_layout.astro';
+
+const pageData = {
+  title: "weekly report",
+  startDate: "01. Feb",
+  endDate: "07. Feb",
+  revenue: "3621.79"
+}
+
 ---
 
 <Layout title="Day 5" page="day5">
-  <div class="center">
-    
+  <div class="card">
+    <div class="card-header">
+      <span class="absolute text-[14px] top-[12px] left-[12px] uppercase font-semibold ">{pageData.title}</span>
+      <span class="absolute text-[11px] top-[14px] right-[15px] text-right">Revenue</span>
+      <span class="absolute text-[11px] top-[30px] left-[12px]">{pageData.startDate} - {pageData.endDate}</span>
+      <span class="absolute text-[14px] top-[28px] right-[15px] text-right font-semibold">$ {pageData.revenue}</span>
+    </div>
+    <div class="card-body">
+      
+    </div>
   </div>
 </Layout>
 

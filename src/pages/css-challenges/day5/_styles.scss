@@ -1,12 +1,30 @@
 :root {
-  
 }
 
 .frame {
-  background: #42A7A1;
+  background: #42a7a1;
 }
 
-.center {
-  
-}
+.card {
+  width: 280px;
+  height: 220px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 60px minmax(0, 1fr);
 
+  &-header {
+    background-color: #f1ba64;
+    color: white;
+    position: relative;
+  }
+
+  &-body {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) 81px 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
