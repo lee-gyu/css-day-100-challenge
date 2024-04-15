@@ -2,5 +2,8 @@
   "cSpell.ignoreWords": [
     "astro",
     "env",
-  ]
+  ],
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
 }
