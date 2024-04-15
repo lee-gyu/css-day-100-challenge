@@ -3,9 +3,11 @@ import Layout from 'src/layouts/_layout.astro';
 ---
 
 <Layout title="Day 4" page="day4">
-  <div class="dot dot-1"></div>
-  <div class="dot dot-2"></div>
-  <div class="dot dot-3"></div>
+  <div class="container">
+    <div class="dot dot-1"></div>
+    <div class="dot dot-2"></div>
+    <div class="dot dot-3"></div>
+  </div>
 </Layout>
 
 <style lang="scss" is:global>
@@ -14,28 +16,76 @@ import Layout from 'src/layouts/_layout.astro';
     background-color: #E56262;
   }
 
-  .dot {
+  .container {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 90px;
+    height: 90px;
     transform: translate3d(-50%, -50%, 0);
+  }
+
+  .dot {
+    position: absolute;
+    top: 0;
+    left: 0;
     background-color: white;
     border-radius: 50%;
-    box-shadow: 0 0 4px 12px rgba(0, 0, 0, 0.2);
 
     &-1 {
       width: 90px;
       height: 90px;
+      animation: jump-jump-1 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
     }
 
     &-2 {
+      top: 15px;
+      left: 15px;
       width: 60px;
       height: 60px;
+      animation: jump-jump-2 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
     }
 
     &-3 {
+      top: 30px;
+      left: 30px;
       width: 30px;
       height: 30px;
+      animation: jump-jump-3 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+    }
+  }
+
+  @keyframes jump-jump-3 {
+    0%, 70% {
+      box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+      transform: scale(0);
+    }
+
+    100% {
+      box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+      transform: scale(1);
+    }
+  }
+
+  @keyframes jump-jump-2 {
+    0%, 40% {
+      box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+      transform: scale(0);
+    }
+    100% {
+        box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+        transform: scale(1);
+    }
+  }
+
+  @keyframes jump-jump-1 {
+    0%, 10% {
+      box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+      transform: scale(0);
+    }
+    100% {
+        box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+        transform: scale(1);
     }
   }
 
