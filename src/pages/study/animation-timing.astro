@@ -1,0 +1,50 @@
+---
+import Layout from 'src/layouts/_layout.astro';
+---
+
+<Layout title="animation timing">
+  <div class="box linear"></div>
+  <div class="box cubic-beizer" style="top: 60px"></div>
+  <div class="box ease-in-out" style="top: 120px"></div>
+  <div class="box ease" style="top: 180px"></div>
+</Layout>
+
+<style lang="scss">
+  .box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    animation: animation 2s infinite;
+  }
+
+  .linear {
+    animation-timing-function: linear;
+  }
+
+  .cubic-beizer {
+    animation-timing-function: cubic-bezier(0.3, 1, 1, 0.3);
+  }
+
+  .ease-in-out {
+    animation-timing-function: ease-in-out;
+  }
+
+  .ease {
+    animation-timing-function: ease;
+  }
+
+  @keyframes animation {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(300px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+</style>
