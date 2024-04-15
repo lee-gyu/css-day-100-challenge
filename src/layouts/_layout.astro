@@ -1,17 +1,21 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ViewTransitions } from 'astro:transitions';
 
-import FloatingActions from "./_floating-actions.astro";
-import { getPageInfo } from "../pages/routing";
+import FloatingActions from './_floating-actions.astro';
+import { getPageInfo } from '../pages/routing';
 
 interface Props {
   title?: string;
-  page: string;
+  page?: string;
 }
 
-const { title, page } = Astro.props;
-const pageInfo = getPageInfo(page);
+const { 
+  title = "",
+  page = ""
+} = Astro.props;
 
+const pageInfo = getPageInfo(page);
+const pageTitle = pageInfo ? `${title}: ${pageInfo.title}` : title;
 ---
 
 <!doctype html>
@@ -20,19 +24,19 @@ const pageInfo = getPageInfo(page);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <ViewTransitions/>
+    <ViewTransitions />
   </head>
   <body>
-    <div class="header">{title}: {pageInfo.title}</div>
+    <div class="header">{pageTitle}</div>
     <div class="frame">
       <slot />
     </div>
-    <FloatingActions page={page}/>
+    <FloatingActions page={page} />
   </body>
 </html>
 
 <style lang="scss">
-  @import "./_layout.scss";
+  @import './_layout.scss';
   @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
 
   :root {
@@ -74,10 +78,9 @@ const pageInfo = getPageInfo(page);
     left: 50%;
     top: 50%;
     color: whitesmoke;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 600;
 
-    transform: translate3d(-50%, -280px, 0);
+    transform: translate3d(-50%, -260px, 0);
   }
-
 </style>
