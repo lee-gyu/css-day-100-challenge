@@ -1,39 +1,35 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import { pageInfo } from "./routing";
+import MainLayout from '../layouts/_main.astro';
+import { pageInfo } from './routing';
 
 const navList = Object.entries(pageInfo);
-
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main</title>
-    <ViewTransitions/>
-  </head>
-  <body>
-    <div class="grid grid-cols-2 px-3 py-2">
-      <nav>
-        <div>CSS Challenges</div>
-        <ol class="ul-grid list-decimal">
-          {navList.map(([key, { title }]) => {
-            return <li><a href={`/css-day-100-challenge/css-challenges/${key}/`}>{title}</a></li>;
-          })}
-        </ol>
-      </nav>
-    </div>
-  </body>
-</html>
+<MainLayout>
+  <div class="grid grid-cols-2 px-3 py-2">
+    <nav>
+      <div>CSS Challenges</div>
+      <ol class="ul-grid list-decimal">
+        {
+          navList.map(([key, { title }]) => {
+            return (
+              <li>
+                <a href={`/css-day-100-challenge/css-challenges/${key}/`}>{title}</a>
+              </li>
+            );
+          })
+        }
+      </ol>
+    </nav>
+  </div>
+</MainLayout>
 
 <style lang="scss">
-  @import "../layouts/_layout.scss";
+  @import '../layouts/_layout.scss';
 
   :root {
     color: white;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 500;
   }
 
