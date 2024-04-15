@@ -4,6 +4,7 @@
     "env",
   ],
   "[astro]": {
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": "astro-build.astro-vscode"
   }
 }
