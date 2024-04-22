@@ -1,0 +1,85 @@
+---
+
+const mode = [
+  "center",
+  "bottom-center",
+  "bottom-left",
+  "bottom-right",
+  "top-center",
+  "top-left",
+  "top-right",
+]
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Card Stack</title>
+</head>
+<body>
+  <form class="grid-form">
+    <fieldset>
+      <legend>Transform Origin</legend>
+      {mode.map((mode, id) => (
+        <input type="radio" id={`mode-${mode}`} name="stack-type" checked={id === 0} />
+        <label for={`mode-${mode}`}>{mode}</label>
+      ))}
+    </fieldset>
+    <fieldset>
+      <legend>Custom</legend>
+      <input type="radio" id="custom-200" name="stack-type" />
+      <label for="custom-200">center 200%</label>
+      <input type="radio" id="custom-25-25" name="stack-type" />
+      <label for="custom-25-25">-25% -25%</label>
+    </fieldset>
+    <fieldset>
+      <legend>Gap</legend>
+      <input id="slider" type="range" min="0" max="20" value="5"/>
+    </fieldset>
+  </form>
+</body>
+</html>
+
+<style lang="scss">
+
+:root {
+  background-color: #606060;
+  color: #ededed;
+
+  --size-3: 1rem;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+
+:where(body) {
+  min-block-size: 100%;
+}
+
+fieldset {
+  display: grid;
+  gap: var(--size-3);
+  padding: 12px;
+}
+
+:where(fieldset) {
+  border: 1px solid currentColor;
+  border-radius: 4px;;
+}
+
+fieldset > label {
+  grid-column: 2;
+}
+
+.grid-form {
+  display: grid;
+  justify-items: start;
+  gap: var(--size-3);
+}
+
+</style>
